@@ -1,17 +1,15 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
+    "target": "es2020",
     "module": "commonjs",
-    "lib": ["ES2020"],
     "outDir": "./dist",
     "rootDir": "./src",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "moduleResolution": "node"
+    "lib": ["ES2020"],       // ✅ include proper libs
+    "types": ["node"]        // ✅ include Node globals like process, console
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src"]
 }
