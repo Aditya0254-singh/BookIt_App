@@ -16,8 +16,8 @@ A **full-stack web application** for booking travel experiences with **real-time
 
 | Home Page | Details Page | Checkout Page  |
 |------------|---------------|----------------|
-| ![Home](https://github.com/Aditya0254-singh/BookIt_App/blob/main/HomePage.png) | ![Details](https://github.com/Aditya0254-singh/BookIt_App/blob/main/DetailsPage.png) | ![Checkout](./screenshots/checkout.png) |
-> Place screenshots in a folder named `screenshots/` at your repo root.
+| ![Home](https://github.com/Aditya0254-singh/BookIt_App/blob/main/HomePage.png) | ![Details](https://github.com/Aditya0254-singh/BookIt_App/blob/main/DetailsPage.png) | ![Checkout](https://github.com/Aditya0254-singh/BookIt_App/blob/main/CheckoutPage.png) |
+
 
 ---
 
@@ -228,7 +228,7 @@ BookIt_App/
 
 - PromoCodes → stores and validates discounts
 
-All managed via Prisma ORM on Supabase PostgreSQL.
+> All managed via Prisma ORM on Supabase PostgreSQL.
 
 ---
 
