@@ -1,0 +1,78 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Experience {
+  id          Int       @id @default(autoincrement())
+  title       String
+  description String    @db.Text
+  location    String
+  price       Float
+  duration    String
+  category    String
+  rating      Float     @default(0)
+  reviews     Int       @default(0)
+  imageUrl    String
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  slots       Slot[]
+  bookings    Booking[]
+
+  @@map("experiences")
+}
+
+model Slot {
+  id             Int        @id @default(autoincrement())
+  experienceId   Int
+  date           DateTime
+  time           String
+  availableSpots Int
+  totalSpots     Int
+  createdAt      DateTime   @default(now())
+  updatedAt      DateTime   @updatedAt
+  experience     Experience @relation(fields: [experienceId], references: [id], onDelete: Cascade)
+  bookings       Booking[]
+
+  @@index([experienceId])
+  @@map("slots")
+}
+
+model Booking {
+  id           Int        @id @default(autoincrement())
+  bookingId    String     @unique @default(cuid())
+  experienceId Int
+  slotId       Int
+  name         String
+  email        String
+  phone        String?
+  guests       Int
+  promoCode    String?
+  discount     Float      @default(0)
+  totalAmount  Float
+  status       String     @default("confirmed")
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+  experience   Experience @relation(fields: [experienceId], references: [id])
+  slot         Slot       @relation(fields: [slotId], references: [id])
+
+  @@index([experienceId])
+  @@index([slotId])
+  @@index([email])
+  @@map("bookings")
+}
+
+model PromoCode {
+  id        Int      @id @default(autoincrement())
+  code      String   @unique
+  discount  Float
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("promo_codes")
+}
