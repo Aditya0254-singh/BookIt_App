@@ -16,7 +16,7 @@ A **full-stack web application** for booking travel experiences with **real-time
 
 | Home Page | Details Page | Checkout Page | Confirmation Page |
 |------------|---------------|----------------|--------------------|
-| ![Home](./screenshots/homepage.png) | ![Details](./screenshots/details.png) | ![Checkout](./screenshots/checkout.png) | ![Confirmation](./screenshots/result.png) |
+| ![Home](https://github.com/Aditya0254-singh/BookIt_App/blob/main/DetailsPage.png) | ![Details](./screenshots/details.png) | ![Checkout](./screenshots/checkout.png) | ![Confirmation](./screenshots/result.png) |
 
 > Place screenshots in a folder named `screenshots/` at your repo root.
 
